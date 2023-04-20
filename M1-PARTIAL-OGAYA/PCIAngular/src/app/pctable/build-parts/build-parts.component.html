@@ -1,0 +1,91 @@
+<form>
+
+  <div class="mb-3 fs-6">
+    <label for="nameHelp" class="form-label">CASES</label>
+    <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+    <select class="form-select" name="Cases" (change)="caseUnitPrice($event)">
+      <option selected>Select Case</option>
+      <option *ngFor="let cases of caseList">{{cases.name}}</option>
+    </select>
+    <div id="partsHelp" class="form-text">Price: {{caseCurrentPrice}}</div>
+  </div>
+
+  <div class="mb-3 fs-6">
+    <label for="nameHelp" class="form-label">GPU</label>
+    <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+    <select class="form-select" id="autoSizingSelect" (change)="gpuUnitPrice($event)">
+      <option selected>Select Graphics Card</option>
+      <option *ngFor="let gpu of gpuList">{{gpu.name}}</option>
+    </select>
+    <div id="partsHelp" class="form-text">Price: {{gpuCurrentPrice}}</div>
+  </div>
+
+  <div class="mb-3 fs-6">
+    <label for="nameHelp" class="form-label">CPU</label>
+    <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+    <select class="form-select" id="autoSizingSelect" (change)="cpuUnitPrice($event)">
+      <option selected>Select CPU</option>
+      <option *ngFor="let cpu of cpuList">{{cpu.name}}</option>
+    </select>
+    <div id="partsHelp" class="form-text">Price: {{cpuCurrentPrice}}</div>
+  </div>
+
+  <div class="mb-3 fs-6">
+    <label for="nameHelp" class="form-label">MOBO</label>
+    <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+    <select class="form-select" id="autoSizingSelect" (change)="moboUnitPrice($event)">
+      <option selected>Select Motherboard</option>
+      <option *ngFor="let mobo of moboList">{{mobo.name}}</option>
+    </select>
+    <div id="partsHelp" class="form-text">Price: {{moboCurrentPrice}}</div>
+  </div>
+
+  <div class="mb-3 fs-6">
+    <label for="nameHelp" class="form-label">FANS</label>
+    <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+    <select class="form-select" id="autoSizingSelect" (change)="fansUnitPrice($event)">
+      <option selected>Select Fan</option>
+      <option *ngFor="let fans of fansList">{{fans.name}}</option>
+    </select>
+    <div id="partsHelp" class="form-text">Price: {{fansCurrentPrice}}</div>
+  </div>
+
+  <div class="mb-3 fs-6">
+    <label for="nameHelp" class="form-label">PSU</label>
+    <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+    <select class="form-select" id="autoSizingSelect" (change)="psuUnitPrice($event)">
+      <option selected>Select Power Supply</option>
+      <option *ngFor="let psu of psuList">{{psu.name}}</option>
+    </select>
+    <div id="partsHelp" class="form-text">Price: {{psuCurrentPrice}}</div>
+  </div>
+
+  <div class="mb-3 fs-6">
+    <label for="nameHelp" class="form-label">RAM</label>
+    <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+    <select class="form-select" id="autoSizingSelect" (change)="ramUnitPrice($event)">
+      <option selected>Select RAM</option>
+      <option *ngFor="let ram of ramList">{{ram.name}}</option>
+    </select>
+    <div id="partsHelp" class="form-text">Price: {{ramCurrentPrice}}</div>
+  </div>
+
+  <div class="mb-3 fs-6">
+    <label for="nameHelp" class="form-label">SSD</label>
+    <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+    <select class="form-select" id="autoSizingSelect" (change)="ssdUnitPrice($event)">
+      <option selected>Select SSD</option>
+      <option *ngFor="let ssd of ssdList">{{ssd.name}}</option>
+    </select>
+    <div id="partsHelp" class="form-text">Price: {{ssdCurrentPrice}}</div>
+  </div>
+
+  <div class="row g-3">
+    <div class="col-sm-7">
+      <button type="submit" class="btn btn-dark" (click)="showPrice()">Build</button>
+    </div>
+    <div class="col-sm">
+      <h3 style="color: green">{{ totalPrice }}</h3>
+    </div>
+  </div>
+</form>

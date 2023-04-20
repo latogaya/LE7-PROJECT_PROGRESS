@@ -1,0 +1,14 @@
+﻿{
+	"profiles": {
+		"IIS Express": {
+			"commandName": "IISExpress",
+			"launchBrowser": true,
+			"environmentVariables": {
+				"ASPNETCORE_ENVIRONMENT": "Development"
+			},
+			"sdkVersion": "5.0.100",
+			"applicationUrl": "https://localhost:44378;http://localhost:64352",
+			"sslPort": 44378
+		}
+	}
+}

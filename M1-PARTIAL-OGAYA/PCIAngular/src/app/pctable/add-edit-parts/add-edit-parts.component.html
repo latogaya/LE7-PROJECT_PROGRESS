@@ -1,0 +1,36 @@
+<form>
+  <div class="mb-3 fs-6">
+    <label for="typeHelp" class="form-label">Type</label>
+    <ng-container *ngIf="id == 0">
+      <input type="text" class="form-control" id="tableName"
+    placeholder="Enter Type" [(ngModel)]="tableName" name="tableName">
+    </ng-container>
+    <ng-container *ngIf="id != 0">
+      <input type="text" class="form-control" id="category"
+    placeholder="Enter Type" [(ngModel)]="category" name="category">
+    </ng-container>
+    <div id="partsHelp" class="form-text">CASES, CPU, FANS, GPU, MOBO, PSU, RAM, SSD</div>
+  </div>
+  <div class="mb-3 fs-6">
+      <label for="nameHelp" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
+      placeholder="Enter Name" [(ngModel)]="name" name="name">
+    </div>
+    <div class="mb-3 fs-6">
+      <label for="codeHelp" class="form-label">Code</label>
+      <input type="text" class="form-control" id="code" aria-describedby="codeHelp"
+      placeholder="Enter Code" [(ngModel)]="code" name="code">
+    </div>
+    <div class="mb-3 fs-6">
+      <label for="brandHelp" class="form-label">Brand</label>
+      <input type="text" class="form-control" id="brand" aria-describedby="brandHelp"
+      placeholder="Enter Brand" [(ngModel)]="brand" name="brand">
+    </div>
+    <div class="mb-3 fs-6">
+      <label for="upHelp" class="form-label">Unit Price</label>
+      <input type="text" class="form-control" id="unitPrice" aria-describedby="upHelp"
+      placeholder="Enter Price" [(ngModel)]="unitPrice" name="unitPrice">
+    </div>
+  <button (click)="addParts()" *ngIf="id == 0" type="submit" class="btn btn-dark">Submit</button>
+  <button (click)="updateParts()" *ngIf="id != 0" type="submit" class="btn btn-dark">Update</button>
+</form>

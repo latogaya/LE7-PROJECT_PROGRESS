@@ -1,0 +1,106 @@
+<div class="content">
+    <div class="container">
+        <h2 class="mb-2 text-center">PC PARTS INVENTORY 2023</h2>
+        <div class="table-responsive custom-table-responsive">
+
+            <table class="table custom-table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Code</th>
+                        <th scope="col">Brand</th>
+                        <th scope="col">Unit Price</th>
+                        <th scope="col" class="d-flex justify-content-end">
+
+                            <button type="button" class="btn btn-primary align-self-end" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" data-backdrop="static" data-keyboard="false" (click)="addClick()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-database-add" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Z" />
+                                    <path
+                                        d="M12.096 6.223A4.92 4.92 0 0 0 13 5.698V7c0 .289-.213.654-.753 1.007a4.493 4.493 0 0 1 1.753.25V4c0-1.007-.875-1.755-1.904-2.223C11.022 1.289 9.573 1 8 1s-3.022.289-4.096.777C2.875 2.245 2 2.993 2 4v9c0 1.007.875 1.755 1.904 2.223C4.978 15.71 6.427 16 8 16c.536 0 1.058-.034 1.555-.097a4.525 4.525 0 0 1-.813-.927C8.5 14.992 8.252 15 8 15c-1.464 0-2.766-.27-3.682-.687C3.356 13.875 3 13.373 3 13v-1.302c.271.202.58.378.904.525C4.978 12.71 6.427 13 8 13h.027a4.552 4.552 0 0 1 0-1H8c-1.464 0-2.766-.27-3.682-.687C3.356 10.875 3 10.373 3 10V8.698c.271.202.58.378.904.525C4.978 9.71 6.427 10 8 10c.262 0 .52-.008.774-.024a4.525 4.525 0 0 1 1.102-1.132C9.298 8.944 8.666 9 8 9c-1.464 0-2.766-.27-3.682-.687C3.356 7.875 3 7.373 3 7V5.698c.271.202.58.378.904.525C4.978 6.711 6.427 7 8 7s3.022-.289 4.096-.777ZM3 4c0-.374.356-.875 1.318-1.313C5.234 2.271 6.536 2 8 2s2.766.27 3.682.687C12.644 3.125 13 3.627 13 4c0 .374-.356.875-1.318 1.313C10.766 5.729 9.464 6 8 6s-2.766-.27-3.682-.687C3.356 4.875 3 4.373 3 4Z" />
+                                </svg></button>
+
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header" style= "color: black" >
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">{{ AddEditModalTitle }}</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close" (click)="closeClick()"></button>
+                                        </div>
+                                        <div class="modal-body" style= "color: black" >
+                                        <app-add-edit-parts [part]="part" *ngIf="ActivateAddEditPartsComponent"></app-add-edit-parts>
+                                        </div>
+                                       </div>
+                                </div>
+                            </div>
+
+                            <!--newly added code-->
+                            <button type="button" class="btn btn-success mx-3 align-self-end" data-bs-toggle="modal"
+                            data-bs-target="#buildModal" data-backdrop="static" data-keyboard="false" (click)="buildClick()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-hammer" viewBox="0 0 16 16">
+                                    <path
+                                        d="M9.972 2.508a.5.5 0 0 0-.16-.556l-.178-.129a5.009 5.009 0 0 0-2.076-.783C6.215.862 4.504 1.229 2.84 3.133H1.786a.5.5 0 0 0-.354.147L.146 4.567a.5.5 0 0 0 0 .706l2.571 2.579a.5.5 0 0 0 .708 0l1.286-1.29a.5.5 0 0 0 .146-.353V5.57l8.387 8.873A.5.5 0 0 0 14 14.5l1.5-1.5a.5.5 0 0 0 .017-.689l-9.129-8.63c.747-.456 1.772-.839 3.112-.839a.5.5 0 0 0 .472-.334z" />
+                                </svg></button>
+                            <!---->
+
+                            <div class="modal fade" id="buildModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header" style= "color: black" >
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">{{BuildModalTitle}}</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close" (click)="closeClick()"></button>
+                                        </div>
+                                        <div class="modal-body" style= "color: black" >
+                                        <app-build-parts [part]="part" *ngIf="ActivateBuildPartsComponent"></app-build-parts>
+                                        </div>
+                                       </div>
+                                </div>
+                            </div>
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr scope="row" *ngFor="let dataItem of PartsList">
+                        <td>{{dataItem.id}}</td>
+                        <td>{{dataItem.category}}</td>
+                        <td>{{dataItem.name}}</td>
+                        <td>{{dataItem.code}}</td>
+                        <td>{{dataItem.brand}}</td>
+                        <td>{{dataItem.unitPrice}}</td>
+                        <td>
+                            <button type="button" class="btn btn-light" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" data-backdrop="static" data-keyboard="false" (click)="editClick(dataItem)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-pencil" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                                </svg>
+                                Edit </button>
+
+                            <button type="button" class="btn btn-danger mx-2" (click)="deleteClick(dataItem)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                </svg>
+                                Delete </button>
+                        </td>
+                    </tr>
+                    <tr class="spacer">
+                        <td colspan="100"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
